@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets
+    xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Create a backed property with state tracking</Title>
+      <Author>Michael Beesley</Author>
+      <Description>Creates a full backed property with built in state tracking, when using the model base class.</Description>
+      <Shortcut>propr</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>propType</ID>
+          <ToolTip>Replace with the property type you want to use.</ToolTip>
+          <Default>string</Default>
+        </Literal>
+        <Literal>
+          <ID>propName</ID>
+          <ToolTip>Replace with the name of the property.</ToolTip>
+          <Default>propertyName</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="CSHARP">
+        <![CDATA[#region $propName$
+        private $propType$ _$propName$;
+        
+        public $propType$ $propName$
+        {
+          get 
+          {
+            return _$propName$;
+          }
+          set
+          {
+            if(value != _$propName$)
+            {
+              PropertyChanged();
+              _$propName$ = value;
+            }
+          }
+        }
+        
+        #endregion // $propName$
+        ]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

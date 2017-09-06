@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets
+    xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>mctor</Title>
+      <Author>Michael Beesley</Author>
+      <Description>Creates the contstructor for a standard model implementing imodel with a model base.</Description>
+      <Shortcut>mctor</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>className</ID>
+          <ToolTip>Replace with the name of the class you want to creat the ctor for.</ToolTip>
+          <Default>classType</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="CSHARP">
+        <![CDATA[
+        /// <summary>
+        /// CTOR telling the model if it is a new instance or an existing hydrated instance
+        /// </summary>
+        public $className$(bool isNew)
+        {
+            SetupModel(isNew);
+        }
+        ]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
