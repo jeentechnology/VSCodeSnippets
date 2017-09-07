@@ -20,11 +20,20 @@
           <ToolTip>Replace with the name of the property.</ToolTip>
           <Default>propertyName</Default>
         </Literal>
+        <Literal>
+          <ID>propDesc</ID>
+          <ToolTip>Replace with public facing description of the property.</ToolTip>
+          <Default>proptery description</Default>
+        </Literal>
       </Declarations>
       <Code Language="CSHARP">
-        <![CDATA[#region $propName$
+        <![CDATA[
+        #region $propName$ - $propDesc$
         private $propType$ _$propName$;
         
+        /// <summary>
+        /// $propDesc$
+        /// </summary>
         public $propType$ $propName$
         {
           get 
@@ -41,8 +50,7 @@
           }
         }
         
-        #endregion // $propName$
-        ]]>
+        #endregion // $propName$]]>
       </Code>
     </Snippet>
   </CodeSnippet>
